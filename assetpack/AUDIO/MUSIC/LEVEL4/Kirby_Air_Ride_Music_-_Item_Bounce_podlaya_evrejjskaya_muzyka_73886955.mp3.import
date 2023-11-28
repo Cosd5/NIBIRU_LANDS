@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Kirby_Air_Ride_Music_-_Item_Bounce_podlaya_evrejjskaya_muzyka_73886955.mp3-3927a9204b92857558984d23ebba3136.mp3str"
+
+[deps]
+
+source_file="res://assetpack/AUDIO/MUSIC/LEVEL4/Kirby_Air_Ride_Music_-_Item_Bounce_podlaya_evrejjskaya_muzyka_73886955.mp3"
+dest_files=[ "res://.import/Kirby_Air_Ride_Music_-_Item_Bounce_podlaya_evrejjskaya_muzyka_73886955.mp3-3927a9204b92857558984d23ebba3136.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

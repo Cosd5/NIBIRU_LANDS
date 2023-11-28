@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/strashnaya-bezdna-nochnogo-koshmara-847.mp3-e738fc9d9add3f8f560a384459d4e12c.mp3str"
+
+[deps]
+
+source_file="res://assetpack/AUDIO/MUSIC/LEVEL3/strashnaya-bezdna-nochnogo-koshmara-847.mp3"
+dest_files=[ "res://.import/strashnaya-bezdna-nochnogo-koshmara-847.mp3-e738fc9d9add3f8f560a384459d4e12c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

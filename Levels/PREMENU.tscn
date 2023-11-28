@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assetpack/PREMENU/zastavka-temnaia-abstrakt.jpg" type="Texture" id=1]
+[ext_resource path="res://assetpack/PREMENU/CORN.png" type="Texture" id=2]
+[ext_resource path="res://assetpack/PREMENU/bukav1.png" type="Texture" id=3]
+[ext_resource path="res://BUKAV.png" type="Texture" id=4]
+[ext_resource path="res://PREMENU.gd" type="Script" id=5]
+
+[node name="PREMENU" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Zastavka-temnaia-abstrakt" type="Sprite" parent="."]
+position = Vector2( 960.5, 540 )
+scale = Vector2( 1.00052, 0.9 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 120.0
+margin_top = 949.0
+margin_right = 1548.0
+margin_bottom = 1050.0
+flat = true
+
+[node name="Bukav1" type="Sprite" parent="Button"]
+position = Vector2( 921, 23 )
+scale = Vector2( 1.17417, 1.585 )
+texture = ExtResource( 3 )
+
+[node name="Bukav" type="Sprite" parent="."]
+position = Vector2( 963, 297 )
+scale = Vector2( 1.3075, 2.56344 )
+texture = ExtResource( 4 )
+
+[node name="Corn" type="Sprite" parent="."]
+position = Vector2( 981, 599 )
+scale = Vector2( 0.720278, 0.615 )
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

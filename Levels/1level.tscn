@@ -1,0 +1,677 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://TILES/Tilemap_1level.tres/tilemap_1level.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assetpack/AUDIO/MUSIC/LEVEL 1&2/7e19229e294e524.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assetpack/MENU/MENU BACK.png" type="Texture" id=4]
+[ext_resource path="res://assetpack/MENU/Cloud.png" type="Texture" id=5]
+[ext_resource path="res://TILES/tile3333333322222222222.tres" type="TileSet" id=6]
+[ext_resource path="res://assetpack/FONTS/ADVENTURE/ljk_Adventure.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assetpack/LANDSHAFT/stone.png" type="Texture" id=8]
+[ext_resource path="res://mobs/SLAME.tscn" type="PackedScene" id=9]
+[ext_resource path="res://teleport/EvilTree1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assetpack/LANDSHAFT/FLOWER PODSULNUX.png" type="Texture" id=11]
+[ext_resource path="res://assetpack/LANDSHAFT/KUSTICK.png" type="Texture" id=12]
+[ext_resource path="res://assetpack/FONTS/KILL 'EM ALL.png" type="Texture" id=13]
+[ext_resource path="res://assetpack/FONTS/OSTROVSKY/Ostrovsky-Bold_0.otf" type="DynamicFontData" id=14]
+[ext_resource path="res://assetpack/FONTS/AMBIENT/ljk_Ambient-Medium.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://UI/pause.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/Manager.gd" type="Script" id=18]
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+
+
+func _on_restart_pressed():
+	get_tree().change_scene(\"res://Levels/22level.tscn\")
+"
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+func _process(delta):
+	text = \"HP: \" + str($\"../../KinematicBody2D\".health)
+"
+
+[sub_resource type="DynamicFont" id=3]
+size = 65
+font_data = ExtResource( 15 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+
+	
+	
+func _process(delta):
+	text = \"Level 1: Начало великой боли\" 
+"
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 15 )
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Label
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _process(delta):
+	text = \"Небесный свод: на пути к замку ЭССЕКС\" 
+"
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = ExtResource( 7 )
+
+[node name="1level" type="Node2D"]
+script = SubResource( 7 )
+
+[node name="Manager" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 18 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( -458732, 2, 0, -458731, 2, 0, -458730, 2, 0, -458729, 2, 0, -458728, 2, 0, -458727, 2, 0, -458726, 2, 0, -458725, 2, 0, -458724, 2, 0, -458723, 2, 0, -458722, 2, 0, -458721, 2, 0, -458720, 2, 0, -458719, 2, 0, -458718, 2, 0, -458717, 2, 0, -458716, 2, 0, -458715, 2, 0, -458714, 2, 0, -458713, 2, 0, -458712, 2, 0, -458711, 2, 0, -458710, 2, 0, -458709, 2, 0, -393205, 2, 0, -393204, 2, 0, -393203, 2, 0, -393202, 2, 0, -393201, 2, 0, -393200, 2, 0, -393199, 2, 0, -393198, 2, 0, -393197, 2, 0, -393173, 2, 0, -393172, 2, 0, -393155, 2, 0, -393154, 2, 0, -393153, 2, 0, -393152, 2, 0, -393151, 2, 0, -393150, 2, 0, -393149, 2, 0, -393148, 2, 0, -393147, 2, 0, -393146, 2, 0, -393145, 2, 0, -393144, 2, 0, -393143, 2, 0, -393142, 2, 0, -393141, 2, 0, -393140, 2, 0, -393139, 2, 0, -393138, 2, 0, -393137, 2, 0, -393136, 2, 0, -393135, 2, 0, -327635, 2, 0, -327634, 2, 0, -327621, 2, 0, -327620, 2, 0, -327598, 2, 0, -327597, 2, 0, -327596, 2, 0, -327595, 2, 0, -327594, 2, 0, -327593, 2, 0, -327592, 2, 0, -327591, 2, 0, -327590, 2, 0, -327589, 2, 0, -327588, 2, 0, -262098, 2, 0, -262097, 2, 0, -262096, 2, 0, -262095, 2, 0, -262094, 2, 0, -262093, 2, 0, -262092, 2, 0, -262091, 2, 0, -262090, 2, 0, -262089, 2, 0, -262088, 2, 0, -262087, 2, 0, -262086, 2, 0, -262085, 2, 0, -262048, 2, 0, -130972, 2, 0, 65639, 2, 0, 196714, 2, 0, 327789, 2, 0, 393310, 2, 0, 393311, 2, 0, 393312, 2, 0, 393313, 2, 0, 393314, 2, 0, 393315, 2, 0, 393316, 2, 0, 393317, 2, 0, 393318, 2, 0, 393319, 2, 0, 393320, 2, 0, 393321, 2, 0, 393322, 2, 0, 393323, 2, 0, 393324, 2, 0, 393325, 2, 0, 458844, 2, 0, 458845, 2, 0, 458847, 2, 0, 458849, 2, 0, 458850, 2, 0, 458851, 2, 0, 458852, 2, 0, 458853, 2, 0, 458854, 2, 0, 458855, 2, 0, 458856, 2, 0, 458857, 2, 0, 458858, 2, 0, 458859, 2, 0, 458860, 2, 0, 458861, 2, 0, 524294, 2, 0, 524378, 2, 0, 524379, 2, 0, 524380, 2, 0, 524382, 2, 0, 524383, 2, 0, 524384, 2, 0, 524385, 2, 0, 524386, 2, 0, 524387, 2, 0, 524388, 2, 0, 524389, 2, 0, 524390, 2, 0, 524391, 2, 0, 524392, 2, 0, 524393, 2, 0, 524394, 2, 0, 524395, 2, 0, 524396, 2, 0, 524397, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589845, 2, 0, 589847, 2, 0, 589848, 2, 0, 589850, 2, 0, 589852, 2, 0, 589854, 2, 0, 589856, 2, 0, 589858, 2, 0, 589869, 2, 0, 589871, 2, 0, 589872, 2, 0, 589873, 2, 0, 589874, 2, 0, 589876, 2, 0, 589895, 2, 0, 589896, 2, 0, 589897, 2, 0, 589898, 2, 0, 589900, 2, 0, 589901, 2, 0, 589902, 2, 0, 589903, 2, 0, 589904, 2, 0, 589905, 2, 0, 589906, 2, 0, 589912, 2, 0, 589913, 2, 0, 589914, 2, 0, 589916, 2, 0, 589917, 2, 0, 589918, 2, 0, 589919, 2, 0, 589920, 2, 0, 589921, 2, 0, 589922, 2, 0, 589923, 2, 0, 589924, 2, 0, 589925, 2, 0, 589926, 2, 0, 589927, 2, 0, 589928, 2, 0, 589929, 2, 0, 589930, 2, 0, 589931, 2, 0, 589932, 2, 0, 589933, 2, 0, 655394, 2, 0, 655395, 2, 0, 655396, 2, 0, 655398, 2, 0, 655400, 2, 0, 655401, 2, 0, 655402, 2, 0, 655403, 2, 0, 655405, 2, 0, 655444, 2, 0, 655448, 2, 0, 655449, 2, 0, 655450, 2, 0, 655451, 2, 0, 655452, 2, 0, 655453, 2, 0, 655454, 2, 0, 655455, 2, 0, 655456, 2, 0, 655457, 2, 0, 655458, 2, 0, 655459, 2, 0, 655460, 2, 0, 655461, 2, 0, 655462, 2, 0, 655463, 2, 0, 655464, 2, 0, 655465, 2, 0, 655466, 2, 0, 655467, 2, 0, 655468, 2, 0, 655469, 2, 0, 720982, 2, 0, 720984, 2, 0, 720985, 2, 0, 720986, 2, 0, 720987, 2, 0, 720988, 2, 0, 720989, 2, 0, 720990, 2, 0, 720991, 2, 0, 720992, 2, 0, 720993, 2, 0, 720994, 2, 0, 720995, 2, 0, 720996, 2, 0, 720997, 2, 0, 720998, 2, 0, 720999, 2, 0, 721000, 2, 0, 721001, 2, 0, 721002, 2, 0, 721003, 2, 0, 721004, 2, 0, 721005, 2, 0 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 769, 558 )
+
+[node name="MenuBack" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 3535, -196 )
+scale = Vector2( 6.83, 4.17444 )
+texture = ExtResource( 4 )
+
+[node name="EvilTree1" parent="MenuBack" instance=ExtResource( 10 )]
+position = Vector2( -403.66, -48.6293 )
+scale = Vector2( 0.146413, 0.239553 )
+
+[node name="SLAME" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( 58.1259, 212.963 )
+
+[node name="SLAME5" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( -133.382, 197.152 )
+
+[node name="SLAME6" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( -213.909, 181.821 )
+
+[node name="SLAME10" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( -241.874, -64.2002 )
+
+[node name="SLAME7" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( -77.0132, 182.06 )
+
+[node name="SLAME8" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( 137.921, 182.06 )
+
+[node name="SLAME9" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( 201.464, -47.6711 )
+
+[node name="SLAME2" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( 495.168, 135.587 )
+
+[node name="SLAME3" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( -4.09955, -21.3202 )
+
+[node name="SLAME4" parent="MenuBack" instance=ExtResource( 9 )]
+position = Vector2( -186.823, -63.7211 )
+
+[node name="FlowerPodsulnux" type="Sprite" parent="MenuBack"]
+position = Vector2( -263.135, 183.877 )
+scale = Vector2( 0.122759, 0.185834 )
+texture = ExtResource( 11 )
+
+[node name="Kustick" type="Sprite" parent="MenuBack"]
+position = Vector2( -71.5959, 182.779 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick2" type="Sprite" parent="MenuBack"]
+position = Vector2( -54.1728, 182.539 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick3" type="Sprite" parent="MenuBack"]
+position = Vector2( -34.407, 182.539 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick5" type="Sprite" parent="MenuBack"]
+position = Vector2( -103.514, 198.35 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick4" type="Sprite" parent="MenuBack/Kustick5"]
+position = Vector2( 508.113, -62.5241 )
+texture = ExtResource( 12 )
+
+[node name="Kustick6" type="Sprite" parent="MenuBack"]
+position = Vector2( -162.518, 198.35 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick25" type="Sprite" parent="MenuBack"]
+position = Vector2( 165.007, -46.9524 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick11" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 457.982, 919.583 )
+texture = ExtResource( 12 )
+
+[node name="Kustick10" type="Sprite" parent="MenuBack/Kustick25/Kustick11"]
+position = Vector2( -126.604, 1.92395 )
+texture = ExtResource( 12 )
+
+[node name="Kustick8" type="Sprite" parent="MenuBack/Kustick25/Kustick11"]
+position = Vector2( -3006.19, 3.84766 )
+texture = ExtResource( 12 )
+
+[node name="Kustick7" type="Sprite" parent="MenuBack/Kustick25/Kustick11"]
+position = Vector2( -2865.15, 1.92395 )
+texture = ExtResource( 12 )
+
+[node name="Kustick14" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 1023.02, 862.831 )
+texture = ExtResource( 12 )
+
+[node name="Kustick12" type="Sprite" parent="MenuBack/Kustick25/Kustick14"]
+position = Vector2( -211.574, 179.877 )
+texture = ExtResource( 12 )
+
+[node name="Kustick18" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 1222.7, 736.821 )
+texture = ExtResource( 12 )
+
+[node name="Kustick16" type="Sprite" parent="MenuBack/Kustick25/Kustick18"]
+position = Vector2( 350.919, -3.05176e-05 )
+texture = ExtResource( 12 )
+
+[node name="Kustick17" type="Sprite" parent="MenuBack/Kustick25/Kustick18"]
+position = Vector2( 175.883, -0.000152588 )
+texture = ExtResource( 12 )
+
+[node name="Kustick15" type="Sprite" parent="MenuBack/Kustick25/Kustick18"]
+position = Vector2( 519.157, -9.15527e-05 )
+texture = ExtResource( 12 )
+
+[node name="Kustick20" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 1068.06, 60.6002 )
+texture = ExtResource( 12 )
+
+[node name="Kustick21" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 625.369, 60.6002 )
+texture = ExtResource( 12 )
+
+[node name="Kustick24" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 393.404, 0 )
+texture = ExtResource( 12 )
+
+[node name="Kustick22" type="Sprite" parent="MenuBack/Kustick25/Kustick24"]
+position = Vector2( 170.787, -1.9238 )
+texture = ExtResource( 12 )
+
+[node name="Kustick23" type="Sprite" parent="MenuBack/Kustick25/Kustick24"]
+position = Vector2( -158.041, -1.9238 )
+texture = ExtResource( 12 )
+
+[node name="Kustick26" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( -241.312, -1.92377 )
+texture = ExtResource( 12 )
+
+[node name="Kustick27" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( -573.54, -3.84753 )
+texture = ExtResource( 12 )
+
+[node name="Kustick19" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 925.309, 62.524 )
+texture = ExtResource( 12 )
+
+[node name="Kustick13" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 704.392, 985.955 )
+texture = ExtResource( 12 )
+
+[node name="Kustick9" type="Sprite" parent="MenuBack/Kustick25"]
+position = Vector2( 58.6284, 923.431 )
+texture = ExtResource( 12 )
+
+[node name="Kustick30" type="Sprite" parent="MenuBack"]
+position = Vector2( -25.3291, -16.5292 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick29" type="Sprite" parent="MenuBack/Kustick30"]
+position = Vector2( 355.167, -1.92384 )
+texture = ExtResource( 12 )
+
+[node name="Kustick31" type="Sprite" parent="MenuBack"]
+position = Vector2( -156.223, -62.2838 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick29" type="Sprite" parent="MenuBack/Kustick31"]
+position = Vector2( 355.167, -1.92384 )
+texture = ExtResource( 12 )
+
+[node name="Kustick32" type="Sprite" parent="MenuBack"]
+position = Vector2( -317.277, -62.7629 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick29" type="Sprite" parent="MenuBack/Kustick32"]
+position = Vector2( 355.167, -1.92384 )
+texture = ExtResource( 12 )
+
+[node name="Kustick33" type="Sprite" parent="MenuBack"]
+position = Vector2( -366.325, -46.9524 )
+scale = Vector2( 0.172314, 0.24904 )
+texture = ExtResource( 12 )
+
+[node name="Kustick29" type="Sprite" parent="MenuBack/Kustick33"]
+position = Vector2( 355.167, -1.92384 )
+texture = ExtResource( 12 )
+
+[node name="FlowerPodsulnux2" type="Sprite" parent="MenuBack"]
+position = Vector2( -263.135, 183.877 )
+scale = Vector2( 0.122759, 0.185834 )
+texture = ExtResource( 11 )
+
+[node name="Kustick28" type="Sprite" parent="MenuBack/FlowerPodsulnux2"]
+position = Vector2( 2528.74, -1162.2 )
+scale = Vector2( 1.40367, 1.34012 )
+texture = ExtResource( 12 )
+
+[node name="FlowerPodsulnux3" type="Sprite" parent="MenuBack"]
+show_behind_parent = true
+position = Vector2( -263.135, 183.877 )
+scale = Vector2( 0.122759, 0.185834 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux4" type="Sprite" parent="MenuBack"]
+position = Vector2( -237.921, 181.581 )
+scale = Vector2( 0.174057, 0.260447 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux5" type="Sprite" parent="MenuBack"]
+position = Vector2( -81.6984, 181.821 )
+scale = Vector2( 0.191609, 0.262833 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux" type="Sprite" parent="MenuBack/FlowerPodsulnux5"]
+position = Vector2( 94.7512, 0.911377 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux2" type="Sprite" parent="MenuBack/FlowerPodsulnux5"]
+position = Vector2( 181.097, 2.73419 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux3" type="Sprite" parent="MenuBack/FlowerPodsulnux5"]
+position = Vector2( 287.31, -0.911499 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux4" type="Sprite" parent="MenuBack/FlowerPodsulnux5"]
+position = Vector2( 1399.11, 5.46851 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux5" type="Sprite" parent="MenuBack/FlowerPodsulnux5"]
+position = Vector2( 1828.55, 1.82275 )
+texture = ExtResource( 11 )
+
+[node name="Kill\'EmAll" type="Sprite" parent="MenuBack"]
+position = Vector2( -403.514, 168.166 )
+scale = Vector2( 0.0566988, 0.0806826 )
+texture = ExtResource( 13 )
+
+[node name="Cloud" type="Sprite" parent="."]
+position = Vector2( 994, 263 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud2" type="Sprite" parent="."]
+position = Vector2( 2018, 407 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud11" type="Sprite" parent="."]
+position = Vector2( 2018, 407 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud9" type="Sprite" parent="."]
+position = Vector2( 2451, 248 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud3" type="Sprite" parent="."]
+position = Vector2( 2835, 203 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud6" type="Sprite" parent="."]
+position = Vector2( 1279, 674 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud7" type="Sprite" parent="."]
+position = Vector2( 2226, 102 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud13" type="Sprite" parent="."]
+position = Vector2( 1032, -971 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud12" type="Sprite" parent="."]
+position = Vector2( 3003, -1083 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud10" type="Sprite" parent="."]
+position = Vector2( 2136, -850 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud22" type="Sprite" parent="."]
+position = Vector2( 1797, -151 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud23" type="Sprite" parent="."]
+position = Vector2( 2361, -359 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud28" type="Sprite" parent="."]
+position = Vector2( 3783, -96 )
+scale = Vector2( 7.9881, 5.05953 )
+texture = ExtResource( 5 )
+
+[node name="Cloud24" type="Sprite" parent="."]
+position = Vector2( 1285, -338 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud26" type="Sprite" parent="."]
+position = Vector2( 440, -530 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud27" type="Sprite" parent="."]
+position = Vector2( 121.5, -845.5 )
+scale = Vector2( 7.20238, 5.91667 )
+texture = ExtResource( 5 )
+
+[node name="Cloud25" type="Sprite" parent="."]
+position = Vector2( 3027, -232 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud15" type="Sprite" parent="."]
+position = Vector2( 4192, -940 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud17" type="Sprite" parent="."]
+position = Vector2( 4192, -940 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud19" type="Sprite" parent="."]
+position = Vector2( 4951, -913 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud29" type="Sprite" parent="."]
+position = Vector2( 4915, 81.9999 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud30" type="Sprite" parent="."]
+position = Vector2( 4283, 151 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud31" type="Sprite" parent="."]
+position = Vector2( 4544, -68 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud32" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 3786, 121 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud33" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 4014, -83 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud34" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 3298, 34 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud20" type="Sprite" parent="."]
+position = Vector2( 4637, -1263 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud21" type="Sprite" parent="."]
+position = Vector2( 5656, -1083 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud18" type="Sprite" parent="."]
+position = Vector2( 3783, -1286 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud16" type="Sprite" parent="."]
+position = Vector2( 3532, -891 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud14" type="Sprite" parent="."]
+position = Vector2( 1624, -756 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud8" type="Sprite" parent="."]
+position = Vector2( 716, 147 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud35" type="Sprite" parent="."]
+position = Vector2( 1267, -100 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud4" type="Sprite" parent="."]
+position = Vector2( 1473, 260 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="Cloud5" type="Sprite" parent="."]
+position = Vector2( 357, 342 )
+scale = Vector2( 3.80952, 2.7381 )
+texture = ExtResource( 5 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_custom_transform = Transform2D( 10, 0, 0, 10, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 393269, 0, 0, 393270, 0, 0, 393271, 0, 0, 393282, 0, 0, 393283, 0, 0, 393284, 0, 0, 458805, 0, 0, 458806, 0, 0, 458807, 0, 0, 458808, 0, 0, 458817, 0, 0, 458818, 0, 0, 458819, 0, 0, 458820, 0, 0, 524341, 0, 0, 524342, 0, 0, 524343, 0, 0, 524344, 0, 0, 524345, 0, 0, 524346, 0, 0, 524347, 0, 0, 524348, 0, 0, 524349, 0, 0, 524350, 0, 0, 524351, 0, 0, 524352, 0, 0, 524353, 0, 0, 524354, 0, 0, 524355, 0, 0, 524356, 0, 0, 589877, 0, 0, 589878, 0, 0, 589879, 0, 0, 589880, 0, 0, 589881, 0, 0, 589882, 0, 0, 589883, 0, 0, 589884, 0, 0, 589885, 0, 0, 589886, 0, 0, 589887, 0, 0, 589888, 0, 0, 589889, 0, 0, 589890, 0, 0, 589891, 0, 0, 589892, 0, 0 )
+
+[node name="FlowerPodsulnux" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 1558, 565 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux7" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 483, 502 )
+texture = ExtResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 26.0
+margin_top = 172.0
+margin_right = 69.0
+margin_bottom = 202.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "HP"
+script = SubResource( 2 )
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+margin_left = 28.0
+margin_top = 48.0
+margin_right = 432.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 0.372549, 0.105882, 0.615686, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Level 1: Начало"
+script = SubResource( 4 )
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+margin_left = 24.0
+margin_top = 117.0
+margin_right = 853.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 0.760784, 0.0823529, 0.0823529, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Небесный свод: на пути к замку ЭССЕКС"
+script = SubResource( 6 )
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+margin_left = 1722.0
+margin_top = 952.0
+margin_right = 1884.0
+margin_bottom = 1027.0
+custom_colors/font_color = Color( 0, 0.0705882, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "ЭТАП1"
+
+[node name="FlowerPodsulnux2" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 3031, -330 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux6" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 763, -394 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux3" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 2953, -392 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux4" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 3165, -268 )
+texture = ExtResource( 11 )
+
+[node name="FlowerPodsulnux5" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 3568, -266 )
+texture = ExtResource( 11 )
+
+[node name="pause" parent="." instance=ExtResource( 17 )]
+
+[node name="Stone" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 1469, 587 )
+scale = Vector2( 0.77381, 0.916667 )
+texture = ExtResource( 8 )
+
+[node name="Stone2" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 1776, 587 )
+scale = Vector2( 0.77381, 0.916667 )
+texture = ExtResource( 8 )
+
+[node name="Stone3" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 2373, 652 )
+scale = Vector2( 0.77381, 0.916667 )
+texture = ExtResource( 8 )
+
+[node name="Stone4" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 5122, 589 )
+scale = Vector2( 0.77381, 0.916667 )
+texture = ExtResource( 8 )
+
+[node name="Stone5" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 5694, 589 )
+scale = Vector2( 0.77381, 0.916667 )
+texture = ExtResource( 8 )
+
+[node name="Stone6" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 5822, 523 )
+scale = Vector2( 0.77381, 0.916667 )
+texture = ExtResource( 8 )
+
+[node name="Stone7" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 5632, -308 )
+scale = Vector2( 0.77381, 0.916667 )
+texture = ExtResource( 8 )
+
+[node name="Stone8" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 5018, -372 )
+scale = Vector2( 0.77381, 0.916667 )
+texture = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 6.992
+autoplay = true

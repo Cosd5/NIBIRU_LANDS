@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://mobs/RunBody.gd" type="Script" id=1]
+[ext_resource path="res://assetpack/ADEPT_EVIL(RUN)/IDLE/ADEPT_EVIL1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.5, 36.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 234.5, 19 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 92, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 260, 36.5 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, 5.5 )
+shape = SubResource( 1 )
+
+[node name="RunZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunZone"]
+position = Vector2( 0.5, -2 )
+shape = SubResource( 3 )
+
+[node name="ZoneFire" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneFire"]
+modulate = Color( 0.858824, 0.0156863, 0.0156863, 1 )
+position = Vector2( 0, -5.5 )
+shape = SubResource( 4 )
+
+[node name="Idle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Idle"]
+position = Vector2( 1, 6.5 )
+shape = SubResource( 5 )
+
+[node name="Fire" type="Position2D" parent="."]
+position = Vector2( 10, -6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 6 )
+
+[connection signal="body_entered" from="RunZone" to="." method="_on_RunZone_body_entered"]
+[connection signal="body_exited" from="RunZone" to="." method="_on_RunZone_body_exited"]
+[connection signal="body_entered" from="ZoneFire" to="." method="_on_ZoneFire_body_entered"]
+[connection signal="body_exited" from="Idle" to="." method="_on_Idle_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

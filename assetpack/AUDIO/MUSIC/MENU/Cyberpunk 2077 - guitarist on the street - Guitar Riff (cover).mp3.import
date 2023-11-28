@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cyberpunk 2077 - guitarist on the street - Guitar Riff (cover).mp3-b42a797ed3292ced9907ed80e749741d.mp3str"
+
+[deps]
+
+source_file="res://assetpack/AUDIO/MUSIC/MENU/Cyberpunk 2077 - guitarist on the street - Guitar Riff (cover).mp3"
+dest_files=[ "res://.import/Cyberpunk 2077 - guitarist on the street - Guitar Riff (cover).mp3-b42a797ed3292ced9907ed80e749741d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

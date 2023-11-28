@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assetpack/FONTS/ADVENTURE/ljk_Adventure.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://bbb6e07e-b675-416d-a451-f1ba1cc0a21f_scaled.jpg" type="Texture" id=2]
+[ext_resource path="res://Levels/CHOOSEMENU(level1).gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[node name="CHOOSEMENU" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Bbb6E07e-b675-416d-a451-f1Ba1Cc0A21fScaled" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 91.0
+margin_top = 131.0
+margin_right = 520.0
+margin_bottom = 280.0
+custom_colors/font_color = Color( 0.0196078, 0.0901961, 0.937255, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ЭТАП ПЕРВЫЙ"
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 80.0
+margin_top = 338.0
+margin_right = 509.0
+margin_bottom = 487.0
+custom_colors/font_color = Color( 0.0196078, 0.0901961, 0.937255, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ЭТАП ВТОРОЙ"
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 70.0
+margin_top = 537.0
+margin_right = 499.0
+margin_bottom = 686.0
+custom_colors/font_color = Color( 0.0196078, 0.0901961, 0.937255, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ЭТАП ТРЕТИЙ"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button2_pressed"]

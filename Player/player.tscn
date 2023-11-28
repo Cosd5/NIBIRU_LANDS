@@ -1,0 +1,134 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://assetpack/Run Bon/BON(RUN)1.png" type="Texture" id=1]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://assetpack/Run Bon/BON(RUN)2.png" type="Texture" id=3]
+[ext_resource path="res://assetpack/BON(FIGHT)/SHOOT/BON(SHOOT).png" type="Texture" id=4]
+[ext_resource path="res://assetpack/fall bon/BON(FALL11)2.png" type="Texture" id=5]
+[ext_resource path="res://assetpack/fall bon/BON(FALL11)1.png" type="Texture" id=6]
+[ext_resource path="res://assetpack/Статик BON/BON(STATIC)1.png" type="Texture" id=7]
+[ext_resource path="res://assetpack/Run Bon/BON(RUN)3.png" type="Texture" id=8]
+[ext_resource path="res://assetpack/Статик BON/BON(STATIC)3.png" type="Texture" id=9]
+[ext_resource path="res://assetpack/Статик BON/BON(STATIC)4.png" type="Texture" id=10]
+[ext_resource path="res://assetpack/Статик BON/BON(STATIC)5.png" type="Texture" id=11]
+[ext_resource path="res://assetpack/Статик BON/BON(STATIC)6.png" type="Texture" id=12]
+[ext_resource path="res://assetpack/Статик BON/BON(STATIC)7.png" type="Texture" id=13]
+[ext_resource path="res://assetpack/Статик BON/BON(STATIC)2.png" type="Texture" id=14]
+[ext_resource path="res://assetpack/Jump Bon/BON(JUMP)6.png" type="Texture" id=15]
+[ext_resource path="res://assetpack/Jump Bon/BON(JUMP)7.png" type="Texture" id=16]
+[ext_resource path="res://assetpack/Jump Bon/BON(JUMP)9.png" type="Texture" id=17]
+[ext_resource path="res://assetpack/Jump Bon/BON(JUMP)10.png" type="Texture" id=18]
+[ext_resource path="res://assetpack/Jump Bon/BON(JUMP)8.png" type="Texture" id=19]
+[ext_resource path="res://assetpack/Jump Bon/BON(JUMP)5.png" type="Texture" id=20]
+[ext_resource path="res://assetpack/BON(FIGHT)/SLIDE/BON(Slide)3.png" type="Texture" id=21]
+[ext_resource path="res://assetpack/BON(FIGHT)/SLIDE/BON(Slide)4.png" type="Texture" id=22]
+[ext_resource path="res://assetpack/BON(FIGHT)/SLIDE/BON(Slide)2.png" type="Texture" id=23]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)15.png" type="Texture" id=24]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)16.png" type="Texture" id=25]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)14.png" type="Texture" id=26]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)13.png" type="Texture" id=27]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)1.png" type="Texture" id=28]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)3.png" type="Texture" id=29]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)5.png" type="Texture" id=30]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)6.png" type="Texture" id=31]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)7.png" type="Texture" id=32]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)8.png" type="Texture" id=33]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)10.png" type="Texture" id=34]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)11.png" type="Texture" id=35]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)12.png" type="Texture" id=36]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)4.png" type="Texture" id=37]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)9.png" type="Texture" id=38]
+[ext_resource path="res://assetpack/BON(FIGHT)/DEATH/BON(DEATH)2.png" type="Texture" id=39]
+[ext_resource path="res://UI/pause.tscn" type="PackedScene" id=40]
+[ext_resource path="res://ANIM/BONATTACK5.png" type="Texture" id=41]
+[ext_resource path="res://ANIM/BONATTACK7.png" type="Texture" id=42]
+[ext_resource path="res://ANIM/BONATTACK9.png" type="Texture" id=43]
+[ext_resource path="res://ANIM/BONATTACK1.png" type="Texture" id=44]
+[ext_resource path="res://ANIM/BONATTACK2.png" type="Texture" id=45]
+[ext_resource path="res://ANIM/BONATTACK4.png" type="Texture" id=46]
+[ext_resource path="res://ANIM/BONATTACK6.png" type="Texture" id=47]
+[ext_resource path="res://ANIM/BONATTACK3.png" type="Texture" id=48]
+[ext_resource path="res://ANIM/BONATTACK8.png" type="Texture" id=49]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 41 ), ExtResource( 47 ), ExtResource( 42 ), ExtResource( 49 ), ExtResource( 43 ) ],
+"loop": false,
+"name": "Attack",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 39 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 25 ), null ],
+"loop": false,
+"name": "Death",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Slide",
+"speed": 8.05
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 14.7969, 23.5 )
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 33.1361
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="anim" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Attack"
+
+[node name="Area2D" type="Area2D" parent="anim"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anim/Area2D"]
+position = Vector2( 39, -14 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.75, 0.75 )
+process_mode = 0
+limit_left = 0
+limit_top = -1000000
+limit_right = 10000
+limit_smoothed = true
+smoothing_enabled = true
+
+[node name="FirePos" type="Position2D" parent="."]
+position = Vector2( 30, -11 )
+
+[node name="pause" parent="." instance=ExtResource( 40 )]
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+[connection signal="body_entered" from="anim/Area2D" to="." method="_on_Area2D_body_entered"]

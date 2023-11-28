@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/VIRUSCHIPde.mp3-8c4cc063dfa5f86c7d617b2a44048d16.mp3str"
+
+[deps]
+
+source_file="res://assetpack/AUDIO/MUSIC/POSTLEVEL2/VIRUSCHIPde.mp3"
+dest_files=[ "res://.import/VIRUSCHIPde.mp3-8c4cc063dfa5f86c7d617b2a44048d16.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

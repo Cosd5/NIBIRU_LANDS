@@ -1,0 +1,117 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)22.png" type="Texture" id=1]
+[ext_resource path="res://assetpack/ADEPT_EVIL(RUN)/IDLE/ADEPT_EVIL1.png" type="Texture" id=2]
+[ext_resource path="res://mobs/EVILSUCKER.gd" type="Script" id=3]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)21.png" type="Texture" id=4]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)5.png" type="Texture" id=5]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)20.png" type="Texture" id=6]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)13.png" type="Texture" id=7]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)9.png" type="Texture" id=8]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)14.png" type="Texture" id=9]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)16.png" type="Texture" id=10]
+[ext_resource path="res://assetpack/ADEPT_EVIL(RUN)/RUN/ADEPT_EVIL(RUN)1.png" type="Texture" id=11]
+[ext_resource path="res://assetpack/ADEPT_EVIL(RUN)/RUN/ADEPT_EVIL(RUN)2.png" type="Texture" id=12]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)2.png" type="Texture" id=13]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)4.png" type="Texture" id=14]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)8.png" type="Texture" id=15]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)10.png" type="Texture" id=16]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)6.png" type="Texture" id=17]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)1.png" type="Texture" id=18]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)7.png" type="Texture" id=19]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)12.png" type="Texture" id=20]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)15.png" type="Texture" id=21]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)17.png" type="Texture" id=22]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)18.png" type="Texture" id=23]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)3.png" type="Texture" id=24]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)11.png" type="Texture" id=25]
+[ext_resource path="res://assetpack/ADEPT_EVIL(DEATH)/ADEPT_EVIL(DEATH)19.png" type="Texture" id=26]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 13 ), ExtResource( 24 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "Death",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Run",
+"speed": 7.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 20.0
+height = 28.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 79.5568, 42.2132 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 23.4975, 34.9018 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 279, 20 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 535, 59 )
+
+[node name="ES" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 3 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 23, -1 )
+
+[node name="Anim" type="AnimatedSprite" parent="."]
+position = Vector2( 1, 0 )
+frames = SubResource( 1 )
+animation = "Attack"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 6 )
+shape = SubResource( 2 )
+
+[node name="Trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+modulate = Color( 0.960784, 0.0117647, 0.0117647, 1 )
+self_modulate = Color( 0.980392, 0.054902, 0.054902, 1 )
+position = Vector2( 0.0574642, 0.361504 )
+shape = SubResource( 3 )
+
+[node name="AttackZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2( -0.55786, 5.49943 )
+shape = SubResource( 4 )
+
+[node name="ZoneFire" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneFire"]
+modulate = Color( 0.403922, 0.109804, 0.878431, 1 )
+position = Vector2( 255, -10 )
+shape = SubResource( 5 )
+
+[node name="Idle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Idle"]
+position = Vector2( 1, 0 )
+shape = SubResource( 6 )
+
+[connection signal="animation_finished" from="Anim" to="." method="_on_Anim_animation_finished"]
+[connection signal="body_entered" from="Trigger" to="." method="_on_Trigger_body_entered"]
+[connection signal="body_exited" from="Trigger" to="." method="_on_Trigger_body_exited"]
+[connection signal="body_entered" from="AttackZone" to="." method="_on_AttackZone_body_entered"]
+[connection signal="body_entered" from="ZoneFire" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Idle" to="." method="_on_Idle_body_exited"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assetpack/FONTS/OSTROVSKY/Ostrovsky-Bold_0.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assetpack/PREMENU/bukavpostmenu.png" type="Texture" id=2]
+[ext_resource path="res://assetpack/PREMENU/steamworkshop_webupload_previewfile_181407830_preview.png" type="Texture" id=3]
+[ext_resource path="res://Levels/POSTMENU2.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[node name="POSTMENU2" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="SteamworkshopWebuploadPreviewfile181407830Preview" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+
+[node name="Bukavpostmenu" type="Sprite" parent="SteamworkshopWebuploadPreviewfile181407830Preview"]
+position = Vector2( -14.6667, -269.333 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="SteamworkshopWebuploadPreviewfile181407830Preview"]
+margin_left = 372.0
+margin_top = 249.333
+margin_right = 657.0
+margin_bottom = 374.333
+rect_pivot_offset = Vector2( -605.667, -214.333 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 0.0196078, 0.0196078, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "NEXT"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 197.0
+margin_right = 2201.0
+margin_bottom = 345.0
+custom_fonts/font = SubResource( 2 )
+text = "в различных параллельных вселенных активно развивались 
+разные формы жизни. начиная от орков, заканчивая единорогами.
+последние преуспели в цепи эволюции. Они стали разумнее 
+большинства существ. или им только так казалось................
+
+
+
+но за несколько миллионов световых лет свирепствовала война.
+темная магия, или же скверна, поглощала сотни планет. 
+Ее владелец был настолько могущественнен, что никто не мог ему
+противостоять . Много планет пали под жестокостью темного
+владыки. Наша история начинается в другой вселенной, где мир 
+еще жив и дышит своей свободой. Темный владыка уничтожил все,
+что было в его мире. теперь ему нужны новые души. он вторгся в 
+священные земли Нибиру..............
+"
+
+[connection signal="pressed" from="SteamworkshopWebuploadPreviewfile181407830Preview/Button" to="." method="_on_Button_pressed"]

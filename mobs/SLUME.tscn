@@ -1,0 +1,86 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assetpack/slime/green slime.png" type="Texture" id=1]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death16.png" type="Texture" id=2]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death12.png" type="Texture" id=3]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death3.png" type="Texture" id=4]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death10.png" type="Texture" id=5]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death15.png" type="Texture" id=6]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death13.png" type="Texture" id=7]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death14.png" type="Texture" id=8]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death6.png" type="Texture" id=9]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death4.png" type="Texture" id=10]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death9.png" type="Texture" id=11]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death5.png" type="Texture" id=12]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death7.png" type="Texture" id=13]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death11.png" type="Texture" id=14]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death1.png" type="Texture" id=15]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death2.png" type="Texture" id=16]
+[ext_resource path="res://assetpack/slime/DEATH/green slime death8.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Death",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Run",
+"speed": 13.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.5, 4.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9, 4.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10.5, 4.5 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="Anim" type="AnimatedSprite" parent="."]
+position = Vector2( 2.15867, 1 )
+scale = Vector2( 0.0501614, 0.0429688 )
+frames = SubResource( 1 )
+animation = "Run"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 2.5, 0.5 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color( 1, 0, 0.258824, 1 )
+position = Vector2( 2, 0.5 )
+shape = SubResource( 3 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 2.5, 0.5 )
+shape = SubResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 20, -11 )
+enabled = true
+cast_to = Vector2( 0, 3 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2( 11, 5 )
+enabled = true
+cast_to = Vector2( 0, 75 )

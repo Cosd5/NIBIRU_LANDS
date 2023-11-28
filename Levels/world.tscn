@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assetpack/LANDSHAFT/upper.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 338.5, 5.5 )
+
+[node name="world" type="Node2D"]
+
+[node name="Upper" type="Sprite" parent="."]
+position = Vector2( 1212, 150 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Upper"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Upper/StaticBody2D"]
+position = Vector2( -0.5, -35.5 )
+shape = SubResource( 3 )

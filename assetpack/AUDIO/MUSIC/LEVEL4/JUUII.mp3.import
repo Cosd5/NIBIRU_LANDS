@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JUUII.mp3-223af244ef0bba6a8c7da24141f4e3cd.mp3str"
+
+[deps]
+
+source_file="res://assetpack/AUDIO/MUSIC/LEVEL4/JUUII.mp3"
+dest_files=[ "res://.import/JUUII.mp3-223af244ef0bba6a8c7da24141f4e3cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
