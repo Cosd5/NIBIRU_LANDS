@@ -55,22 +55,12 @@ shape = SubResource( 1 )
 frames = SubResource( 2 )
 animation = "Death"
 
-[node name="RayCastR" type="RayCast2D" parent="."]
-position = Vector2( 23, 39 )
-enabled = true
-cast_to = Vector2( 0, 17 )
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color( 0.407843, 0, 1, 1 )
 position = Vector2( -0.5, 0.25 )
 shape = SubResource( 3 )
-
-[node name="RayCastL" type="RayCast2D" parent="."]
-position = Vector2( -27, 38 )
-enabled = true
-cast_to = Vector2( 0, 17 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

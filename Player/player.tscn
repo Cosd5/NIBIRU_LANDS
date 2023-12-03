@@ -94,7 +94,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 14.7969, 23.5 )
+extents = Vector2( 29.9492, 21.125 )
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 33.1361
@@ -109,7 +109,7 @@ animation = "Attack"
 [node name="Area2D" type="Area2D" parent="anim"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="anim/Area2D"]
-position = Vector2( 39, -14 )
+position = Vector2( 44, -9 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

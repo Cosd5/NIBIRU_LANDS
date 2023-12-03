@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assetpack/PREMENU/zastavka-temnaia-abstrakt.jpg" type="Texture" id=1]
 [ext_resource path="res://TILES/n23.tres" type="TileSet" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assetpack/LANDSHAFT/PORTAL SINIY.png" type="Texture" id=14]
 [ext_resource path="res://Levels/FAKEL.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Levels/5Level.gd" type="Script" id=16]
+[ext_resource path="res://mobs/etern_spawn.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -133,6 +134,9 @@ position = Vector2( -518.33, -615.461 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 633, 2219 )
+
+[node name="etern_spawn" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1079, 2204 )
 
 [node name="TileMap3" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )

@@ -36,7 +36,7 @@ func _on_Node2D_body_entered(body):
 	elif body.name == "ES2":
 		body.kill()
 		queue_free()
-	elif body.name == "Slime":
+	elif body.name == "SLAME":
 		body.kill()
 	elif body.name == "SLAME2":
 		body.kill()

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 
+
 const SPEED = 200
 const RUNSPEED = 400
 const GRAVITY = 970
@@ -75,7 +76,7 @@ func _physics_process(delta):
 					get_parent().add_child(fire)
 	elif state == ATTACK:
 		var t = ($"../KinematicBody2D".global_position - self.global_position).normalized()
-		vel = (Vector2.LEFT if Vector2.RIGHT.dot(t) < Vector2.LEFT.dot(t) else Vector2.RIGHT) * SPEED
+		vel = (Vector2.LEFT if Vector2.RIGHT.dot(t) < Vector2.LEFT.dot(t) else Vector2.RIGHT) * -SPEED
 		
 			
 	
